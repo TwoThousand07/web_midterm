@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeRun Hackathon - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container mt-5 d-flex justify-content-center">
+        <div class="col-md-6 contact-wrapper">
+            <div class="badge-absolute">HOT</div>
+            
+            <h2 class="text-center mb-4">Team Registration</h2>
+            <form action="#" method="POST">
+                <div class="mb-3">
+                    <label for="teamName" class="form-label">Team Name</label>
+                    <input type="text" class="form-control" id="teamName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Contact Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="techStack" class="form-label">Main Tech Stack</label>
+                    <select class="form-select" id="techStack">
+                        <option value="frontend">React / Vue / HTML&CSS</option>
+                        <option value="backend">Python / Java / C#</option>
+                        <option value="mobile">iOS / Swift / Android</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Tell us about your idea</label>
+                    <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
