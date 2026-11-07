@@ -52,5 +52,5 @@ The registration form validates data in the browser and does not send it to a se
 
 ## Project links
 
-- Published site: [URL]
-- GitHub repository: [URL]
+- Published site: https://twothousand07.github.io/web_midterm/
+- GitHub repository: https://github.com/TwoThousand07/web_midterm
