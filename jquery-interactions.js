@@ -1,6 +1,7 @@
 "use strict";
 
 $(function () {
+    // Find the answer inside the clicked FAQ card so other answers stay unchanged.
     $(".js-faq-toggle").on("click", function () {
         const button = $(this);
         const answer = button.closest(".faq-item").find(".faq-answer");
@@ -10,6 +11,7 @@ $(function () {
         answer.stop(true, true).slideToggle(180);
     });
 
+    // These small effects reveal help text without sending the user to another page.
     $(".js-help-toggle").on("click", function () {
         const button = $(this);
         const helpText = button.parent().children(".js-help-content");

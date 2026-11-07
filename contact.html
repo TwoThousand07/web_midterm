@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Register a team for the CodeRun Hackathon.">
-    <title>CodeRun Hackathon - Contact</title>
+    <title data-i18n="contact.title">CodeRun Hackathon - Contact</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top site-nav">
         <div class="container">
             <a class="navbar-brand" href="index.html">CodeRun</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-i18n-aria-label="nav.toggle"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3"><button class="btn btn-outline-light btn-sm theme-toggle" id="themeToggle" type="button">Dark mode</button></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav.about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html" data-i18n="nav.schedule">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html" data-i18n="nav.projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="planner.html" data-i18n="nav.planner">Team planner</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><button class="btn btn-outline-light btn-sm" id="themeToggle" type="button" aria-pressed="false" data-i18n="theme.dark">Dark mode</button></li>
+                    <li class="nav-item ms-lg-2"><button class="btn btn-outline-light btn-sm" id="languageToggle" type="button" aria-label="Change language" data-i18n-aria-label="language.accessible" data-i18n="language.switch">RU</button></li>
                 </ul>
             </div>
         </div>
@@ -30,70 +31,66 @@
 
     <main class="container py-5 d-flex justify-content-center">
         <section class="col-12 col-lg-8 contact-wrapper" aria-labelledby="registration-heading">
-            <h1 class="h2 text-center mb-2" id="registration-heading">Team registration</h1>
-            <p class="text-muted text-center mb-4">Tell us who is joining and what you would like to build.</p>
+            <header class="page-heading mb-4">
+                <p class="eyebrow" data-i18n="nav.contact">Contact</p>
+                <h1 class="h2" id="registration-heading" data-i18n="contact.title">Team registration</h1>
+                <p class="text-muted mb-0" data-i18n="contact.lead">Tell us who is joining and what you would like to build.</p>
+            </header>
 
             <form id="registrationForm" novalidate>
                 <div class="mb-3">
-                    <label for="teamName" class="form-label">Team name</label>
+                    <label for="teamName" class="form-label" data-i18n="contact.teamName">Team name</label>
                     <input type="text" class="form-control" id="teamName" name="teamName" autocomplete="organization" aria-describedby="teamNameError" required>
                     <div class="invalid-feedback" id="teamNameError"></div>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Contact email</label>
+                    <label for="email" class="form-label" data-i18n="contact.email">Contact email</label>
                     <input type="email" class="form-control" id="email" name="email" autocomplete="email" aria-describedby="emailError" required>
                     <div class="invalid-feedback" id="emailError"></div>
                 </div>
                 <div class="row g-3">
                     <div class="col-md-6 mb-3">
-                        <label for="members" class="form-label">Team size</label>
-                        <input type="number" class="form-control" id="members" name="members" min="1" max="3" step="1" aria-describedby="membersError" required>
-                        <div class="form-text">Teams can have 1 to 3 members.</div>
+                        <label for="members" class="form-label" data-i18n="contact.members">Team size</label>
+                        <input type="number" class="form-control" id="members" name="members" min="1" max="3" step="1" aria-describedby="membersHint membersError" required>
+                        <div class="form-text" id="membersHint" data-i18n="contact.membersHint">Teams can have 1 to 3 members.</div>
                         <div class="invalid-feedback" id="membersError"></div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="techStack" class="form-label">Main tech stack</label>
+                        <label for="techStack" class="form-label" data-i18n="contact.stack">Main tech stack</label>
                         <select class="form-select" id="techStack" name="techStack" aria-describedby="techStackError" required>
-                            <option value="">Choose a category</option>
-                            <option value="web">React / Vue / HTML &amp; CSS</option>
-                            <option value="backend">Python / Java / C#</option>
-                            <option value="mobile">iOS / Swift / Android</option>
-                            <option value="other">Other</option>
+                            <option value="" data-i18n="contact.choose">Choose a category</option>
+                            <option value="web" data-i18n="contact.web">React / Vue / HTML &amp; CSS</option>
+                            <option value="backend" data-i18n="contact.backend">Python / Java / C#</option>
+                            <option value="mobile" data-i18n="contact.mobile">iOS / Swift / Android</option>
+                            <option value="other" data-i18n="contact.other">Other</option>
                         </select>
                         <div class="invalid-feedback" id="techStackError"></div>
                     </div>
                 </div>
                 <div class="mb-2">
-                    <label for="message" class="form-label">Tell us about your idea</label>
+                    <label for="message" class="form-label" data-i18n="contact.idea">Tell us about your idea</label>
                     <textarea class="form-control" id="message" name="message" rows="4" aria-describedby="ideaHint ideaCounter messageError" required></textarea>
-                    <div class="d-flex justify-content-between">
-                        <div class="form-text" id="ideaHint">Please write at least 20 characters.</div>
-                        <div class="form-text" id="ideaCounter" aria-live="polite">0 characters</div>
-                    </div>
+                    <div class="d-flex justify-content-between gap-2"><div class="form-text" id="ideaHint" data-i18n="contact.ideaHint">Please write at least 20 characters.</div><div class="form-text" id="ideaCounter" aria-live="polite"></div></div>
                     <div class="invalid-feedback" id="messageError"></div>
                 </div>
-                <button type="submit" class="btn btn-primary w-100 mt-3">Check application</button>
+                <button type="submit" class="btn btn-primary w-100 mt-3" data-i18n="contact.submit">Check application</button>
             </form>
 
-            <div class="alert alert-success mt-4 mb-0" id="registrationSuccess" role="status" hidden></div>
-            <p class="small text-muted mt-3 mb-0">This class project validates the form in your browser. It does not send personal information to a server.</p>
+            <div class="alert alert-success mt-4 mb-0" id="registrationSuccess" role="status" hidden data-i18n="contact.success"></div>
+            <p class="small text-muted mt-3 mb-0" data-i18n="contact.privacy">This class project validates the form in your browser. It does not send personal information to a server.</p>
 
             <div class="registration-help mt-4">
-                <button class="btn btn-link p-0 js-help-toggle" type="button" aria-expanded="false" aria-controls="registrationTip">Need a hand?</button>
-                <div class="js-help-content help-content mt-2" id="registrationTip">
-                    <p class="mb-0">A team may include up to three students. Your project idea can change during the hackathon, so a short early outline is enough.</p>
-                </div>
+                <button class="btn btn-link p-0 js-help-toggle" type="button" aria-expanded="false" aria-controls="registrationTip" data-i18n="contact.help">Need a hand?</button>
+                <div class="js-help-content help-content mt-2" id="registrationTip"><p class="mb-0" data-i18n="contact.helpText">A team may include up to three students. Your project idea can change during the hackathon, so a short early outline is enough.</p></div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark text-white text-center py-3 mt-auto">
-        <p>&copy; 2026 CodeRun Hackathon. All rights reserved.</p>
-    </footer>
-
+    <footer class="site-footer text-center py-3"><p class="mb-0" data-i18n="footer.rights">© 2026 CodeRun Hackathon. All rights reserved.</p></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="jquery-interactions.js"></script>
     <script src="app.js"></script>
+    <script type="module" src="js/final.js"></script>
 </body>
 </html>

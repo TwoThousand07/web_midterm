@@ -1,6 +1,6 @@
-# CodeRun Hackathon Website
+# CodeRun Hackathon
 
-Endterm continuation of the responsive CodeRun midterm website. It keeps the original hackathon topic and five connected pages, and adds browser interactions using JavaScript and jQuery.
+CodeRun is a responsive, bilingual hackathon website continued from the group’s midterm and endterm projects. It uses HTML, CSS, Bootstrap, JavaScript, and jQuery.
 
 ## Group
 
@@ -10,40 +10,47 @@ Endterm continuation of the responsive CodeRun midterm website. It keeps the ori
 
 ## Pages
 
-- Home: hackathon introduction and a schedule preview generated from event data.
-- About: event details and an expandable FAQ.
-- Schedule: event table generated from data, with a category filter.
-- Projects: project cards generated from data, with search, category filters, and saved projects.
-- Contact: team registration form with field-specific validation and a local success message.
+- **Home:** event details and schedule preview
+- **About:** hackathon information and FAQ
+- **Schedule:** event list with category filtering
+- **Projects:** project gallery, favorites, and GitHub search
+- **Team planner:** task creation and management
+- **Contact:** validated team registration form
 
-All pages share responsive Bootstrap navigation and a light/dark theme control. Saved projects and the theme choice use this browser's local storage. Images in the images folder are replaceable project previews.
+## Features
+
+- GitHub repository search using `fetch` and `async`/`await`, with loading, success, empty, and error states
+- `GitHubRepository`, `PlannerTask`, and `TaskBoard` classes
+- Task CRUD saved as JSON in `localStorage`
+- Repository search, filtering, sorting, saved items, and pagination
+- Task dashboard with totals, overdue counts, completion percentage, and priority statistics
+- Saved language and theme preferences
+- Dynamic content, form validation, project favorites, schedule filtering, and jQuery FAQ and help interactions
 
 ## Run locally
 
-Open index.html in a browser, or serve this folder with a local static server. For example, from the project folder run:
+From the project folder, start a local server:
 
     python3 -m http.server 8000
 
-Then open http://localhost:8000. Bootstrap and jQuery are loaded from CDNs, so the browser needs an internet connection for those libraries.
+Open http://localhost:8000. Bootstrap, jQuery, and GitHub search require an internet connection.
 
-## Try the interactive features
+## Test the features
 
-1. On Projects, search by a word such as “React”, change the category, and clear the filters.
-2. Save a project, switch to saved projects, reload the page, and check that the saved list remains.
-3. Press Escape in the project search box to clear it.
-4. On Schedule, select a category and confirm that the matching rows and event count update.
-5. Use the theme button on any page and navigate to another page to see the preference persist.
-6. On About, open and close the FAQ answers. On Contact, open “Need a hand?”.
-7. On Contact, submit the empty form to see field-specific messages. Then enter a team name of at least 2 characters, a valid email, a team size from 1 to 3, a technology category, and an idea of at least 20 characters. The valid form shows a success message.
+1. Switch the language and theme, then open another page to check that preferences persist.
+2. On Projects, search and filter gallery items, save a project, and reload the page.
+3. Search GitHub repositories; try filtering, sorting, pagination, and saving a result.
+4. In Team planner, add, edit, complete, filter, sort, and delete tasks. Reload the page to check saved tasks and dashboard statistics.
+5. On Contact, submit an empty form, then submit valid data to see the validation messages and success state.
+6. On About, open and close FAQ answers. On Schedule, filter events by category.
 
-The registration interaction is a front-end demonstration. It validates data in the browser and does not submit it to a server.
+## GitHub API
 
-## Publish
+The Projects page uses the public `GET https://api.github.com/search/repositories` endpoint. It displays repository names, descriptions, languages, star counts, update dates, and links. The endpoint does not require an API key. Search results are cached in the browser for 10 minutes; network errors and rate limits are handled in the interface.
 
-The project is a static site and can be hosted on GitHub Pages or Netlify. For GitHub Pages, push the project to a GitHub repository, open Settings → Pages, select the main branch and the root folder, and save. After GitHub provides the site address, add it here before submitting:
+The registration form validates data in the browser and does not send it to a server.
 
-    Live site: add the published URL here
+## Project links
 
-## Group commit breakdown
-
-The project history separates the work into member-sized commits: site foundation and shared design (Erzhan), dynamic project and schedule features (Alisher), and registration, jQuery interactions, and usage documentation (Bekarys). The original midterm image files are retained in a separate commit.
+- Published site: [URL]
+- GitHub repository: [URL]
